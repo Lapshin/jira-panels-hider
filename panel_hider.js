@@ -4,7 +4,7 @@ var button = null;
 
 function addRightPanelHideButton() {
 	button = document.createElement("Button");
-	button.innerHTML = "show panel";
+	button.innerHTML = "hide panel";
 	button.style = "top:0;right:0;position:absolute;z-index: 9999; font-family: monospace"
 	button.onclick = function() {
 		rightPanel.hidden = !rightPanel.hidden;
@@ -17,7 +17,7 @@ function checkRightPanel() {
 	var rightPanelTmp = document.getElementById('jira-issue-header-actions')?.parentNode?.parentNode;
 	if (!!rightPanelTmp && rightPanelTmp !== rightPanel) {
 		rightPanel = rightPanelTmp;
-		rightPanel.hidden = true;
+		rightPanel.hidden = false;
 		if (!button) {
 			addRightPanelHideButton();
 		} else if (button.hidden) {
