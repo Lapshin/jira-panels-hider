@@ -36,12 +36,21 @@ function checkLeftPanel() {
 	}
 }
 
+function checkCodeBlocks() {
+	var codeBlocks = document.getElementsByClassName('code-block');
+	for (var i = 0; i < codeBlocks.length; i++) {
+		element = codeBlocks.item(i);
+		element.childNodes[0].childNodes[0].style.maxHeight = '40em';
+	}
+}
+
 function observeChanges() {
   'use strict';
   var observer = new MutationObserver(function(mutations) {
   console.log(document.readyState)
 	checkRightPanel();
 	checkLeftPanel();
+	checkCodeBlocks();
   });
   observer.observe(document, {
     childList: true,
