@@ -18,6 +18,8 @@ function checkRightPanel() {
 	if (!!rightPanelTmp && rightPanelTmp !== rightPanel) {
 		rightPanel = rightPanelTmp;
 		rightPanel.hidden = true;
+		rightPanel.style.paddingRight = "0px";
+		rightPanel.style.width = "10%";
 		if (!button) {
 			addRightPanelHideButton();
 		} else if (button.hidden) {
